@@ -22,7 +22,7 @@
           
           
 
-          auth.signInWithEmailAndPassword(email, password)
+          auth.signInWithEmailAndPassword(email, pass)
           .then(user => {
              window.location = '/';
           }).catch(error => {
