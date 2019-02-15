@@ -18,16 +18,16 @@ app.use('/scripts', express.static(__dirname + '/node_modules/bootstrap/dist/'))
 
 
 app.get('/', function(req,res){
-  res.sendFile('/Users/antounsawires/Desktop/Node Projects/imakenyc/views/index.html');
+  res.sendFile('views/index.html', {root: __dirname});
 })
 
 app.get('/login', function(req,res){
-  res.sendFile('/Users/antounsawires/Desktop/Node Projects/imakenyc/views/login.html');
+  res.sendFile('views/login.html', {root: __dirname});
 
 })
 
 app.get('/register', function(req,res){
-  res.sendFile('/Users/antounsawires/Desktop/Node Projects/imakenyc/views/register.html');
+  res.sendFile('views/register.html', {root: __dirname});
 
 })
 
