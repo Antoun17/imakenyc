@@ -24,6 +24,12 @@
           const promise = auth.signInWithEmailAndPassword(email, pass);
           promise.catch(e => console.log(e.message));
       });
+
+      firebase.auth().onAuthStateChanged(user => {
+          if (user) {
+              window.location = '/views/index.html';
+          }
+      })
       
     
 }());
