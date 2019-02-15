@@ -25,13 +25,14 @@
           promise.catch(e => console.log(e.message));
       });
 
-      firebase.auth().onAuthStateChanged(user =>{
+      firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            console.log('You can view');
-        }    else {
-            window.location.replace('/');
-        }    
-      })
-     
+          console.log('User is logged in and redirecting');
+          window.location('/');
+        } else {
+            console.log('User is not logged in please login');
+            window.location('/login');
+        }
+      });
 
 }());

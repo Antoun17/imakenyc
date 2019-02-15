@@ -9,10 +9,3 @@ var config = {
   firebase.initializeApp(config);
   const auth = firebase.auth();
 
-  var user = firebase.auth().currentUser;
-
-    if (user) {
-        console.log('You can view');
-    }    else {
-        window.location.replace('/login');
-    }    
