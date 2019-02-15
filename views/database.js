@@ -1,3 +1,4 @@
+
 var config = {
     apiKey: "AIzaSyCohX8N7ujFAzSNRD9FghQgAjFttNtxkkE",
     authDomain: "imakenyc.firebaseapp.com",

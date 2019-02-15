@@ -1,3 +1,6 @@
+var auth = require('../auth');
+
+
 var config = {
     apiKey: "AIzaSyCohX8N7ujFAzSNRD9FghQgAjFttNtxkkE",
     authDomain: "imakenyc.firebaseapp.com",
@@ -11,8 +14,12 @@ var config = {
 
   var user = firebase.auth().currentUser;
 
-    if (user) {
-        console.log('You can view');
-    }    else {
-        window.location.replace('/login');
-    }    
+  auth.signInWithEmailAndPassword(email, pass)
+  .then(user => {
+     window.location = '/';
+  }).catch(error => {
+      window.location = '/login';
+      console.error(error);
+  })
+
+  
