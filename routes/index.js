@@ -11,8 +11,8 @@ var config = {
 
   var user = firebase.auth().currentUser;
 
-  firebase.auth().signInWithEmailAndPassword(user => {
     if (user) {
-        window.location = '/views/index.html';
-    }
-})
+        console.log('You can view');
+    }    else {
+        window.location.replace('/login');
+    }    

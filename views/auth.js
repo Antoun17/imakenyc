@@ -25,4 +25,13 @@
           promise.catch(e => console.log(e.message));
       });
 
+      firebase.auth().onAuthStateChanged(user =>{
+        if (user) {
+            console.log('You can view');
+        }    else {
+            window.location.replace('/');
+        }    
+      })
+     
+
 }());
