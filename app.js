@@ -23,12 +23,10 @@ app.get('/', function(req,res){
 
 app.get('/login', function(req,res){
   res.sendFile('views/login.html', {root: __dirname});
-
 })
 
 app.get('/register', function(req,res){
   res.sendFile('views/register.html', {root: __dirname});
-
 })
 
 module.exports = app;
