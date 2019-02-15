@@ -25,11 +25,4 @@
           promise.catch(e => console.log(e.message));
       });
 
-      firebase.auth().signInWithEmailAndPassword(user => {
-          if (user) {
-              window.location = '/views/index.html';
-          }
-      })
-      
-    
 }());
