@@ -20,19 +20,16 @@
           const email = txtEmail.value;
           const pass = txtPassword.value;
           
+          
 
-          const promise = auth.signInWithEmailAndPassword(email, pass);
-          promise.catch(e => console.log(e.message));
+          auth.signInWithEmailAndPassword(email, password)
+          .then(user => {
+             window.location = '/';
+          }).catch(error => {
+              console.error(error);
+          })
       });
-
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          console.log('User is logged in and redirecting');
-          window.location('/');
-        } else {
-            console.log('User is not logged in please login');
-            window.location('/login');
-        }
-      });
+      
+   
 
 }());
