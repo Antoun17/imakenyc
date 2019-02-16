@@ -1,7 +1,6 @@
 (function(){
-
     const config = {
-        apiKey: "AIzaSyCohX8N7ujFAzSNRD9FghQgAjFttNtxkkE",
+        apiKey: "AIzaSyBAw8WIdDvcIOcj8F9c3CFmAP0tThMPzXg",
         authDomain: "imakenyc.firebaseapp.com",
         databaseURL: "https://imakenyc.firebaseio.com",
         projectId: "imakenyc",
