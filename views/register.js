@@ -1,8 +1,4 @@
 (function(){
-<<<<<<< HEAD
-    import * as config from '../private/creds';
-
-=======
     const config = {
         apiKey: "AIzaSyBAw8WIdDvcIOcj8F9c3CFmAP0tThMPzXg",
         authDomain: "imakenyc.firebaseapp.com",
@@ -11,7 +7,6 @@
         storageBucket: "imakenyc.appspot.com",
         messagingSenderId: "569887602205"
       };
->>>>>>> b2ad86780c054f26d80e4cbc9fd3d2059b833a21
       firebase.initializeApp(config);
       const auth = firebase.auth();
 
