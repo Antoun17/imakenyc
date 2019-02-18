@@ -10,6 +10,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.static(__dirname + './public/stylesheets'));
+
 app.use('/views', express.static(__dirname + '/views'));
 
 app.use('/routes', express.static('./routes/'));
@@ -29,8 +31,8 @@ app.get('/register', function(req,res){
   res.sendFile('views/register.html', {root: __dirname});
 })
 
-app.get('/test', function(req,res){
-  res.sendFile('views/test.html', {root: __dirname});
+app.get('/style', function(req, res){
+  res.sendFile('public/stylesheets/style.css', {root: __dirname});
 })
 
 module.exports = app;
