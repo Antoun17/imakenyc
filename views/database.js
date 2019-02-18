@@ -15,6 +15,11 @@ var config = {
   const inputTextField = document.querySelector("#latestRequest");
   const saveButton = document.querySelector("#saveButton");
   const loadButton = document.querySelector("#loadButton");
+  const btnLogin = document.querySelector("#btnLogin");
+
+  btnLogin.addEventListener("click", function(){
+    window.location = '/login';
+  })
 
   saveButton.addEventListener("click", function(){
     const textToSave = inputTextField.value;
@@ -35,6 +40,17 @@ var config = {
     else {
       window.location = '/login'; 
     }
+  });
+
+  btnLogOut.addEventListener('click', e => {
+    firebase.auth().signOut()
+    .then(function(){
+        console.log('Sucessfully Logged Out');
+    })
+    .catch(function(error) {
+        console.log('not signed in');
+        console.log(error);
+    });
   });
 
   getRealtimeUpdates = function() {
