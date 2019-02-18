@@ -20,14 +20,41 @@
           const email = txtEmail.value;
           const pass = txtPassword.value;
           
-          
-
-          auth.signInWithEmailAndPassword(email, pass)
-          .then(user => {
-             window.location = '/';
-          }).catch(error => {
-              console.error(error);
-          })
+          firebase.auth().signInWithEmailAndPassword(email, pass).then(function(user) {
+            // user signed in
+         }).catch(function(error) {
+             var errorCode = error.code;
+             var errorMessage = error.message;
+         
+             if (errorCode === 'auth/wrong-password') {
+                 alert('Wrong password.');
+             } else {
+                 alert(errorMessage);         
+             }
+             console.log(error);
+         })
       });
+
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          console.log(user.uid);
+        }
+        else {
+            console.log('No User');
+        }
+      });
+
+      btnLogOut.addEventListener('click', e => {
+        firebase.auth().signOut()
+        .then(function(){
+            console.log('Sucessfully Logged Out');
+        })
+        .catch(function(error) {
+            console.log('not signed in');
+            console.log(error);
+        });
+      });
+
+       
       
 }());

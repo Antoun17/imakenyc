@@ -29,4 +29,8 @@ app.get('/register', function(req,res){
   res.sendFile('views/register.html', {root: __dirname});
 })
 
+app.get('/test', function(req,res){
+  res.sendFile('views/test.html', {root: __dirname});
+})
+
 module.exports = app;
