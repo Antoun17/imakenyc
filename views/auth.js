@@ -38,6 +38,7 @@
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           console.log(user.uid);
+          window.location = '/';
         }
         else {
             console.log('No User');
@@ -54,7 +55,5 @@
             console.log(error);
         });
       });
-
-       
       
 }());

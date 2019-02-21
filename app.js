@@ -1,11 +1,21 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var https = require('https');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
 var app = express();
+app.get('/request', function(req, res){
+  request('https://www.joinit.org/api/beta/organizations/me/memberships?token=sGxFZB93Y4AAkyJR2', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      var info = JSON.parse(body)
+      // do more stuff
+      res.send(info);
+    }
+  })
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

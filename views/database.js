@@ -16,6 +16,7 @@ var config = {
   const saveButton = document.querySelector("#saveButton");
   const loadButton = document.querySelector("#loadButton");
   const btnLogin = document.querySelector("#btnLogin");
+  const joinItTest = document.querySelector("#joinItTest");
 
   btnLogin.addEventListener("click", function(){
     window.location = '/login';
